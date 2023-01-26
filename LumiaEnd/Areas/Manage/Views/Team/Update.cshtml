@@ -1,0 +1,51 @@
+﻿@model Team
+<div class="container">
+    <h1>Create Team</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="row align-item-center">
+            <label asp-for="Fullname">Full Name</label>
+            <input asp-for="Fullname" class="form-control" placeholder="Full Name">
+            <span asp-validation-for="Fullname" style="color: red"></span>
+        </div>
+        <div class="row align-item-center">
+            <label asp-for="PositionId">Position</label>
+            <select asp-for="PositionId" class="form-select" aria-label="Default select example">
+                @foreach (Position position in ViewBag.Position)
+                {
+                    <option value="@position.Id">@position.Name</option>
+                }
+            </select>
+        </div>
+        <div class="row align-item-center">
+            <label asp-for="Desc">Description</label>
+            <textarea asp-for="Desc" class="form-control" placeholder="Description"></textarea>
+            <span asp-validation-for="Desc" style="color: red"></span>
+        </div>
+        <div class="row align-item-center">
+            <label asp-for="ImageFile">ImageFile</label>
+            <input asp-for="ImageFile" class="form-control" placeholder="ImageFile ">
+            <span asp-validation-for="ImageFile" style="color: red"></span>
+        </div>
+        <div class="row align-item-center">
+            <label asp-for="RedirectUrl1">RedirectUrl1</label>
+            <input asp-for="RedirectUrl1" class="form-control" placeholder="RedirectUrl1">
+        </div>
+        <div class="row align-item-center">
+            <label asp-for="RedirectUrl2">RedirectUrl2</label>
+            <input asp-for="RedirectUrl2" class="form-control" placeholder="RedirectUrl2">
+        </div>
+        <div class="row align-item-center">
+            <label asp-for="RedirectUrl3">RedirectUrl3</label>
+            <input asp-for="RedirectUrl3" class="form-control" placeholder="RedirectUrl3">
+        </div>
+        <div class="row align-item-center">
+            <label asp-for="RedirectUrl4">RedirectUrl4</label>
+            <input asp-for="RedirectUrl4" class="form-control" placeholder="RedirectUrl4">
+        </div>
+
+
+
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
